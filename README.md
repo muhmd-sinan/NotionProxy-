@@ -34,7 +34,7 @@ Key details (learned by capturing a real browser session):
 |---|---|
 | `notion_proxy.py` | The gateway (FastAPI). |
 | `credentials.json` | Your session (gitignored in spirit — never share/commit). |
-| `credentials.example.json` | Template for a fresh account. |
+| `credentials.json1` | Reference template — copy to `credentials.json`, then run refresh (see below). |
 | `start_gateway.cmd` / `stop_gateway.cmd` | Start/stop on port `8330`. |
 | `refresh_credentials.py` / `.cmd` | Renew `token_v2` after expiry (see below). |
 | `opencode.snippet.json` | Provider block to merge into `opencode.json`. |

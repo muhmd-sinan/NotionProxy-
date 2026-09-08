@@ -16,6 +16,11 @@ pip install -r requirements.txt
 
 ## 2. First run — get credentials
 
+> **Cloned the repo?** Start from the reference template: copy
+> `credentials.json1` → `credentials.json`, then run the refresh below —
+> it fills in every session field automatically. Never commit your real
+> `credentials.json` (it's git-ignored).
+
 ```powershell
 # double-click refresh_credentials.cmd, or:
 python refresh_credentials.py
