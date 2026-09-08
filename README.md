@@ -23,7 +23,7 @@ opencode  →  http://127.0.0.1:8330/v1/chat/completions  →  notion_proxy.py
 Key details (learned by capturing a real browser session):
 - Upstream must be `app.notion.com` with a current `notion-client-version`.
 - Client model names are mapped to Notion internal IDs
-  (e.g. `claude-sonnet4.6` → `orlando-quinn`, the GPT-6 Astra backend).
+  (e.g. `gpt-6-astra` → `orlando-quinn`), with per-model reasoning effort.
 - Requests use Chrome TLS impersonation (`curl_cffi`) — plain `httpx`
   gets `Something went wrong` from Notion/Cloudflare.
 - Answers are parsed from the `agent-inference` patch stream.
@@ -102,14 +102,38 @@ another port.
 
 ## Models
 
+Live picker captured 2026-09-08 (`getAvailableModels`). Client name →
+Notion internal codename in `MODEL_MAP`; per-model `reasoningEffort`
+defaults in `MODEL_EFFORT` (Notion rejects unsupported efforts).
+
 | opencode name | Notion backend | Notes |
 |---|---|---|
-| `claude-sonnet4.6` | `orlando-quinn` | Verified working, recommended |
-| `claude-opus4.8` | `ambrosia-tart-high` | Experimental |
-| `claude-opus4.7` | `apricot-sorbet-high` | Experimental |
-| `gpt-5.5` | `opal-quince-medium` | Experimental |
-| `gemini-3.1pro` | `galette-medium-thinking` | Experimental |
-| `kimi-2.6` | `fireworks-kimi-k2.6` | Experimental |
+| `gpt-6-astra` | `orlando-quinn` | Verified working, recommended default |
+| `claude-opus-5` | `agave-flan` | Hardest-tasks tier |
+| `claude-sonnet-5` | `angel-cake-high` | |
+| `gpt-5.6-sol` | `orange-mousse` | Hardest-tasks tier |
+| `gpt-5.6-terra` | `orchid-muffin` | |
+| `gpt-5.6-luna` | `olive-jellyroll` | |
+| `kimi-k3` | `fireworks-kimi-k3` | Hardest-tasks tier |
+| `claude-opus4.8` | `ambrosia-tart-high` | |
+| `claude-opus4.7` | `apricot-sorbet-high` | |
+| `claude-opus4.6` | `avocado-froyo-medium` | No `workflow` backend — may fail |
+| `claude-sonnet4.6` | `almond-croissant-low` | |
+| `claude-haiku4.5` | `anthropic-haiku-4.5` | No `workflow` backend — may fail |
+| `gpt-5.5` | `opal-quince-medium` | |
+| `gpt-5.4` | `oval-kumquat-medium` | |
+| `gpt-5.2` | `oatmeal-cookie` | |
+| `gemini-3.1-pro` | `galette-medium-thinking` | |
+| `gemini-3.7-flash` | `grapefruit-zeppole` | |
+| `grok-4.5` | `strawberry-whoopiepie` | Picker labels newest Grok "4.6" |
+| `grok-4.3` | `xigua-mochi-medium` | |
+| `kimi-k2.6` | `fireworks-kimi-k2.6` | |
+| `deepseek-v4-pro` | `baseten-deepseek-v4-pro` | |
+| `deepseek-v4-flash` | `baseten-deepseek-v4-flash` | |
+| `glm-5.2` | `baseten-glm-5.2` | |
+
+Skipped: Fable 5 / 5.1 (disabled, `trial_not_allowed`), Auto (no backend
+codename), GPT-5.4 Mini/Nano + Gemini 3 Flash (customAgent-only).
 
 Notion rotates internal model IDs — if a model starts failing, capture a
 fresh `runInferenceTranscript` request (DevTools → Network) and update

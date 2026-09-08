@@ -1,0 +1,12 @@
+# Secrets - token_v2 grants FULL Notion account access. NEVER commit real credentials.
+credentials.json
+credentials.bak-*.json
+credentials.*.json
+!credentials.example.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/

@@ -1,0 +1,37 @@
+{
+  "provider": {
+    "notion": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Notion AI (local)",
+      "options": {
+        "baseURL": "http://127.0.0.1:8330/v1",
+        "apiKey": "notion-local-key"
+      },
+      "models": {
+        "gpt-6-astra": { "name": "GPT-6 Astra (Notion)", "reasoning": true, "limit": { "context": 400000, "output": 128000 } },
+        "claude-opus-5": { "name": "Claude Opus 5 (Notion)", "reasoning": true, "limit": { "context": 1000000, "output": 128000 } },
+        "claude-sonnet-5": { "name": "Claude Sonnet 5 (Notion)", "reasoning": true, "limit": { "context": 1000000, "output": 128000 } },
+        "claude-opus4.8": { "name": "Claude Opus 4.8 (Notion)", "reasoning": true, "limit": { "context": 1000000, "output": 128000 } },
+        "claude-opus4.7": { "name": "Claude Opus 4.7 (Notion)", "reasoning": true, "limit": { "context": 1000000, "output": 128000 } },
+        "claude-opus4.6": { "name": "Claude Opus 4.6 (Notion)", "reasoning": true, "limit": { "context": 1000000, "output": 128000 } },
+        "claude-sonnet4.6": { "name": "Claude Sonnet 4.6 (Notion)", "reasoning": true, "limit": { "context": 1000000, "output": 128000 } },
+        "claude-haiku4.5": { "name": "Claude Haiku 4.5 (Notion)", "reasoning": true, "limit": { "context": 500000, "output": 64000 } },
+        "gpt-5.6-sol": { "name": "GPT-5.6 Sol (Notion)", "reasoning": true, "limit": { "context": 400000, "output": 128000 } },
+        "gpt-5.6-terra": { "name": "GPT-5.6 Terra (Notion)", "reasoning": true, "limit": { "context": 400000, "output": 128000 } },
+        "gpt-5.6-luna": { "name": "GPT-5.6 Luna (Notion)", "reasoning": true, "limit": { "context": 400000, "output": 128000 } },
+        "gpt-5.5": { "name": "GPT-5.5 (Notion)", "reasoning": true, "limit": { "context": 400000, "output": 128000 } },
+        "gpt-5.4": { "name": "GPT-5.4 (Notion)", "reasoning": true, "limit": { "context": 400000, "output": 128000 } },
+        "gpt-5.2": { "name": "GPT-5.2 (Notion)", "reasoning": true, "limit": { "context": 400000, "output": 128000 } },
+        "gemini-3.1-pro": { "name": "Gemini 3.1 Pro (Notion)", "reasoning": true, "limit": { "context": 1000000, "output": 65536 } },
+        "gemini-3.7-flash": { "name": "Gemini 3.7 Flash (Notion)", "reasoning": true, "limit": { "context": 1000000, "output": 65536 } },
+        "grok-4.5": { "name": "Grok 4.5 (Notion)", "reasoning": true, "limit": { "context": 400000, "output": 128000 } },
+        "grok-4.3": { "name": "Grok 4.3 (Notion)", "reasoning": true, "limit": { "context": 400000, "output": 128000 } },
+        "kimi-k3": { "name": "Kimi K3 (Notion)", "reasoning": true, "limit": { "context": 256000, "output": 65536 } },
+        "kimi-k2.6": { "name": "Kimi K2.6 (Notion)", "reasoning": true, "limit": { "context": 256000, "output": 65536 } },
+        "deepseek-v4-pro": { "name": "DeepSeek V4 Pro (Notion)", "reasoning": true, "limit": { "context": 256000, "output": 65536 } },
+        "deepseek-v4-flash": { "name": "DeepSeek V4 Flash (Notion)", "reasoning": true, "limit": { "context": 256000, "output": 65536 } },
+        "glm-5.2": { "name": "GLM 5.2 (Notion)", "reasoning": true, "limit": { "context": 256000, "output": 65536 } }
+      }
+    }
+  }
+}

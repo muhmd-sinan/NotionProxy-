@@ -1,0 +1,6 @@
+fastapi>=0.110
+httpx>=0.27
+uvicorn>=0.29
+curl_cffi>=0.10
+# optional: only for refresh_credentials.py --auto (full browser automation)
+# playwright>=1.40
